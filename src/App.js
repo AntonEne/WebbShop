@@ -1,24 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import ItemInput from './components/ItemInput';
+import React from 'react';
+import {DataStoreProvider} from "./context/dbContext"
+import InventoryList from './components/InventoryList';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataStoreProvider>
+       <ItemInput></ItemInput>
+       <InventoryList></InventoryList>
+    </DataStoreProvider>
   );
 }
 
